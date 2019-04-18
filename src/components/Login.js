@@ -1,17 +1,4 @@
-/*import React  from "react";
 
-
-export const Login = () => (
-<div>
-  <h2>LOgin</h2>
-  <p> bla bla bla bla</p>
-  <p>2222222222222222</p>
-  <p>33333333333333333</p>
-</div>
-)
-    
-
- */
 
 import React from "react";
 
