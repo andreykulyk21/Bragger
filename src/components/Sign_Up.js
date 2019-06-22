@@ -1,34 +1,18 @@
-/*import React  from "react";
-
-
-export const Login = () => (
-<div>
-  <h2>LOgin</h2>
-  <p> bla bla bla bla</p>
-  <p>2222222222222222</p>
-  <p>33333333333333333</p>
-</div>
-)
-    
-
-
- */
-
-import React from 'react';
+import React from "react";
 import { Form, Field } from 'react-final-form';
 
-export const Login = () => (
+export const Sign_Up = () => (
   <div className="FormCenter">
-    <Form onSubmit={async ({ nickName, password }) => {
-      console.log(nickName, password)
-      if (nickName !== password) {
-        return { password: 'Login is not equal to password' }
+    <Form onSubmit={async ({ password, confirmPassword }) => {
+      console.log(password, confirmPassword)
+      if (password !== confirmPassword) {
+        return { confirmPassword: 'Confirm Password is not equal to Password' }
       }
     }
     }
       render={({ handleSubmit, form, submitting, pristine, values }) => (
         <form onSubmit={handleSubmit}>
-          <h2>Sign In</h2>
+          <h2>Sign Up</h2>
           <div className="FormField">
             <Field
               name="nickName"
@@ -59,23 +43,26 @@ export const Login = () => (
           </div>
 
           <div className="FormField">
+            <label className="FormField__Label" htmlFor="password">Confirm Password</label>
+            <Field
+              name="confirmPassword"
+            >
+              {({ input, meta }) =>
+                (<div>
+                  <input {...input} type="password" className="FormField__Input" placeholder="Confirm  Password" />
+                  {(meta.error || meta.submitError) && meta.touched && (
+                    <span>{meta.error || meta.submitError}</span>
+                  )}
+                </div>)}
+            </Field>
+          </div>
+
+          <div className="FormField">
             <div className="FormField">
               <button type="submit" className="FormField__Button mr-20">Sign In</button>
             </div>
           </div>
         </form>)} />
-
-    <div className="FormField">
-      <form method="get" action="/Sign_Up">
-        <button className="FormField__Button mr-20">Sign Up</button>
-      </form>
-    </div>
-
-
-
-
-  </div >
+  </div>
 
 );
-
-

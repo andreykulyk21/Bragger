@@ -6,8 +6,11 @@ import { Contact } from './components/Contact';
 import { Login } from './components/Login';
 import { NoMatch } from './components/NoMatch';
 import { Layout } from './components/Layout';
+import {Sign_Up} from './components/Sign_Up';
 import { NavigationBar } from './components/NavigationBar';
 import './components/Login.css';
+import'./components/Home.css';
+
 import { Jumbotron } from './components/Jumbotron';
 
 class App extends Component {
@@ -23,6 +26,7 @@ class App extends Component {
               <Route path="/home" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
+              <Route path="/sign_up" component={Sign_Up} />
               <Route component={NoMatch} />
 
             </Switch>

@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "final-form": "^4.15.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-bootstrap-grid": "^1.0.0",
     "react-dom": "^16.8.6",
+    "react-final-form": "^6.2.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "styled-components": "^4.2.0"
