@@ -6,10 +6,11 @@ import { Contact } from './components/Contact';
 import { Login } from './components/Login';
 import { NoMatch } from './components/NoMatch';
 import { Layout } from './components/Layout';
-import {Sign_Up} from './components/Sign_Up';
+import { Sign_Up } from './components/Sign_Up';
 import { NavigationBar } from './components/NavigationBar';
+import { instanceHasToken } from "./api/Api";
 import './components/Login.css';
-import'./components/Home.css';
+import './components/Home.css';
 
 import { Jumbotron } from './components/Jumbotron';
 
@@ -19,7 +20,7 @@ class App extends Component {
       <React.Fragment>
         <Router>
           <NavigationBar />
-          <Jumbotron />
+          {!instanceHasToken && <Jumbotron />}
           <Layout>
             <Switch>
               <Route exact path="/" component={Login} />
@@ -28,7 +29,6 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/sign_up" component={Sign_Up} />
               <Route component={NoMatch} />
-
             </Switch>
           </Layout>
         </Router>

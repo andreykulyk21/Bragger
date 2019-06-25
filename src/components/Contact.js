@@ -1,11 +1,10 @@
-import React  from "react";
+import React from "react";
 
 
 export const Contact = () => (
-<div>
-  <h2>Contact</h2>
-  <p> Vasiok +48 555 555 555</p>
-  
-</div>
+  <div>
+    <h2>Contact</h2>
+    <p> Business – +38 095 88 44 321</p>
+  </div>
 )
 

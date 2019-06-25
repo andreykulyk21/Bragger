@@ -1,9 +1,22 @@
-import React from 'react'
-
-const data = [{ author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" }, { author: "Lolek", message: "Siema", date: "10-09-2018" },]
+import React from "react";
+import { instance } from "../../api/Api";
 
 export class Provider extends React.Component {
-    render(){
-        return this.props.children(data)
-    }
+  constructor() {
+    super();
+    this.state = {
+      twits: []
+    };
+  }
+
+  componentDidMount() {
+    instance
+      .get("http://localhost:4000/twit")
+      .then(({ data: { twits } }) => this.setState({ twits }))
+      .catch(e => console.error(e));
+  }
+
+  render() {
+    return this.props.children(this.state.twits);
+  }
 }

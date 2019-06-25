@@ -1,10 +1,9 @@
-// {author: 'Lolik Bolik', message: "Jestem tutaj", date: "04-03-2018"}
 import React from "react";
 
-export const Twit = ({date, author, message}) => (
+export const Twit = ({ date, author, message }) => (
   <div className="twit card">
     <p>
-       {author} {date}
+      {author} {date}
     </p>
     <hr />
     <ul>

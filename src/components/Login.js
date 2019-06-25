@@ -1,14 +1,17 @@
 
 
 import React from "react";
+import {Field, Form} from 'react-final-form'
+import {
+  withRouter
+} from "react-router-dom";
+import { login } from "../api/Api";
 
-export const Login = () => (
+const LoginUnwrapped = ({history}) => (
   <div className="FormCenter">
     <Form onSubmit={async ({ nickName, password }) => {
-      console.log(nickName, password)
-      if (nickName !== password) {
-        return { password: 'Login is not equal to password' }
-      }
+      await login(nickName, password)
+      history.push('/home')
     }
     }
       render={({ handleSubmit, form, submitting, pristine, values }) => (
@@ -55,12 +58,8 @@ export const Login = () => (
         <button className="FormField__Button mr-20">Sign Up</button>
       </form>
     </div>
-
-
-
-
   </div >
 
 );
 
-
+export const Login = withRouter(LoginUnwrapped)
